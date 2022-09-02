@@ -18,7 +18,7 @@ aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
 
 LOGGER = getLogger(__name__)
 
-rawowners = "<h1 style='text-align: center'>See my Channel <a href='https://t.me/JMDKH_Team'>@Telegram</a><br><br>By<br><br><a href='https://github.com/junedkh'>Juned KH</a></h1>"
+rawowners = "<h1 style='text-align: center'>See my Channel <a href='https://t.me/AK_Mirror'>@Telegram</a><br><br>By<br><br><a href='https://github.com/Adhil-AK'>Adhil-AK</a></h1>"
 
 pin_entry = '''
     <section>

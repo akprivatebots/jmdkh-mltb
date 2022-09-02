@@ -43,17 +43,17 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("📢 Channel", 'https://t.me/JMDKH_Team')
+    buttons.buildbutton("📢 Channel", 'https://t.me/AK_Mirror')
     reply_markup = buttons.build_menu(1)
     uname = mention_html(update.message.from_user.id, update.message.from_user.first_name)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'🙌🏽Hey <b>{uname}</b>\n\n' \
         '🌹 Welcome To One Of A Modified Anas Mirror Bot\n' \
         'This bot can Mirror all your links To Google Drive!\n' \
-        '👨🏽‍💻 Powered By: @JMDKH_Team'
+        '👨🏽‍💻 Powered By: @AK_Mirror'
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not Authorized user', context.bot, update.message, reply_markup)
+        sendMarkup('Not Authorized user. You can only use me in my mirror group.', context.bot, update.message, reply_markup)
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
     if Interval:
@@ -122,6 +122,8 @@ def main():
         (f'{BotCommands.StatusCommand[0]}','Get Mirror Status Message'),
         (f'{BotCommands.BtSelectCommand}','Select files to download using qb'),
         (f'{BotCommands.ListCommand}','Searches Files in Drive'),
+        (f'{BotCommands.SetThumbCommand}', 'Set Custom Thumbnail'),
+        (f'{BotCommands.LeechSetCommand}', 'Leech Settings'),
         (f'{BotCommands.CancelMirror}','Cancel a Task'),
         (f'{BotCommands.CancelAllCommand}','Cancel all tasks which added by you'),
         (f'{BotCommands.StatsCommand}','Bot Usage Stats'),
