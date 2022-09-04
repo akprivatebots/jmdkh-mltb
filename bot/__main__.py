@@ -121,7 +121,7 @@ def main():
         (f'{BotCommands.CloneCommand}','Copy File/folder To GDrive'),
         (f'{BotCommands.StatusCommand[0]}','Get Mirror Status Message'),
         (f'{BotCommands.BtSelectCommand}','Select files to download using qb'),
-        (f'{BotCommands.ListCommand}','Searches Files in Drive'),
+        (f'{BotCommands.ListCommand[0]}','Searches Files in Drive'),
         (f'{BotCommands.SetThumbCommand}', 'Set Custom Thumbnail'),
         (f'{BotCommands.LeechSetCommand}', 'Leech Settings'),
         (f'{BotCommands.CancelMirror}','Cancel a Task'),
