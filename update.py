@@ -66,8 +66,18 @@ if update.returncode == 0:
 else:
     log_error('Something went wrong while updating, check UPSTREAM_REPO if valid or not!')
 
-log_error('Downloading important files....')
-log_error('Well i dont need these important files since i already have them....')
-log_error('No Shit!')
-log_error('Cancelled the Download.')
-log_error('Ready to Start')
+try:
+    res = rget(f"https://github.com/akprivatebots/jmdkh-mltb/releases/{BOT_VERSION}/download/jmdkh_mtlb_heroku.zip")
+    if res.status_code == 200:
+        log_info("Downloading important files....")
+        with open('jmdkh.zip', 'wb+') as f:
+            f.write(res.content)
+        log_info("Extracting important files....")
+        srun(["unzip", "-q", "-o", "jmdkh.zip"])
+        srun(["chmod", "-R", "777", "bot"])
+        log_info("Ready to Start!")
+        remove("jmdkh.zip")
+    else:
+        log_error(f"Failed to download jmdkh.zip, link got HTTP response: {res.status_code}")
+except Exception as e:
+    log_error(f"Release url : {e}")
